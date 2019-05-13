@@ -12,18 +12,17 @@
 
 #include "Libft.h"
 
-char    *ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
-    size_t *ptr;
-    size_t i;
+	size_t *ptr;
+	size_t i;
 
-    i = size - 1;
-
-    ptr = (size_t *)malloc(size * sizeof(size_t));
-    while (i >= 0)
-    {
-        ptr[i] = '\0';
-        i++;
-    }
-    return (ptr);
+	i = size - 1;
+	ptr = (size_t *)malloc(size * sizeof(size_t));
+	while (i >= 0)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
+	return (ptr);
 }

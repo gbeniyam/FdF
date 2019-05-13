@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 void	*ft_memalloc(size_t size)
 {
-	void *areaptr;
-	areaptr = (void)malloc(size * sizeof(size_t));
+	size_t *areaptr;
+
+	areaptr = (size_t)malloc(size * sizeof(size_t));
 	return (areaptr);
 }

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 char	*ft_strstr(const char *haystack, const char *needle)
 {
 	int i;
@@ -24,7 +26,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 			j++;
 			i++;
 			if (needle[j] == '\0')
-				break;
+				break ;
 		}
 		else
 		{

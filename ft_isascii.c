@@ -6,11 +6,13 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 21:56:01 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/08 21:58:07 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/12 20:43:02 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+#include "Libft.h"
+
+int	ft_isascii(int c)
 {
-	return (c >= 0 && <= 127);
+	return (c >= 0 && c <= 127);
 }

@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*stpcpy(char *dst, const char *src)
+#include "Libft.h"
+
+char	*ft_stpcpy(char *dst, const char *src)
 {
 	size_t i;
 
