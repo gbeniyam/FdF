@@ -6,7 +6,7 @@
 #    By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/29 18:44:48 by gbeniyam          #+#    #+#              #
-#    Updated: 2019/05/10 14:01:57 by gbeniyam         ###   ########.fr        #
+#    Updated: 2019/05/13 23:08:10 by gbeniyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,8 +82,8 @@ all:
 clean:
 	rm -f *.o
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re:
 	fclean all
