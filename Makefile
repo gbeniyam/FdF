@@ -6,7 +6,7 @@
 #    By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/29 18:44:48 by gbeniyam          #+#    #+#              #
-#    Updated: 2019/05/13 23:08:10 by gbeniyam         ###   ########.fr        #
+#    Updated: 2019/05/14 13:59:30 by gbeniyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRC =	ft_memset.c\
 		ft_memalloc.c\
 		ft_memdel.c\
 		ft_strnew.c\
-		ft_strdel.c\
+#		ft_strdel.c\
 		ft_strclr.c\
 		ft_striter.c\
 		ft_striteri.c\
@@ -71,13 +71,12 @@ SRC =	ft_memset.c\
 
 OBJ = $(SRC:.c=.o)
 
-make_lib:
+$(NAME):
 	gcc -c $(SRC) $(CLAGS)
 	ar -rv $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-all:
-	make_lib
+all: $(NAME)
 
 clean:
 	rm -f *.o
@@ -85,5 +84,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re:
-	fclean all
+re: fclean all

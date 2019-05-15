@@ -6,16 +6,16 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 17:54:53 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/01 15:24:10 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:21:44 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	size_t	*ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
 	ptr = s;
 	i = 0;
