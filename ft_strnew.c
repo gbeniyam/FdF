@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 18:37:57 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/14 18:52:32 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:40:16 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ char	*ft_strnew(size_t size)
 	size_t i;
 
 	i = 0;
-	ptr = (char *)malloc(size * sizeof(size_t));
-	while (i <= size - 1)
+	if (!(ptr = (char *)malloc((size + 1) * sizeof(size_t))))
+		return (0);
+	while (i < size)
 	{
 		ptr[i] = '\0';
 		i++;

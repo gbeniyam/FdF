@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 21:17:20 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/14 15:07:20 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/18 15:51:15 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	dup = (char *)malloc(i * sizeof(char));
-	free(dup);
 	return (dup);
 }

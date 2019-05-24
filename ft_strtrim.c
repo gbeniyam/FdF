@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/06 15:52:16 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/18 21:07:06 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/18 15:14:29 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/20 11:59:46 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strtrim(char const *s)
 {
-	size_t i;
-	size_t j;
+	char *result;
+	char *start;
+	char *end;
 	size_t len;
 
-	i = 0;
-	j = 0;
-	len = ft_strlen(dst);
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < dstsize)
-		i++;
-	if (dstsize > len + 1)
-	{
-		while (src[j] && i + j < dstsize - 1)
-		{
-			dst[i + j] = src[j];
-			j++;
-		}
-		dst[i + j] = '\0';
-	}
-	return (i + ft_strlen(src));
+	start = (char *)s;
+	len = 0;
+	end = (char *)s + (ft_strlen(s) - 1);
+	if (!s)
+		return (NULL);
+	while (*start && ft_iswhtsp(*start))
+		start++;
+	while (end > start && ft_iswhtsp(*end))
+		end--;
+	while ((start + len) <= end)
+		len++;
+	result = ft_strnew(len);
+	if (!result)
+		return (NULL);
+	result = strncpy(result, start, len);
+	return (result);
 }

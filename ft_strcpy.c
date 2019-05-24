@@ -6,13 +6,13 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/05 18:53:30 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/05 19:29:47 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/18 17:23:25 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stpcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t i;
 

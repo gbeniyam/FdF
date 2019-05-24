@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 17:14:12 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/15 20:50:59 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/20 12:02:36 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/23 18:14:04 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	**ft_strsplit(char const *s, char c)
 {
-	free(*as);
-	*as = NULL;	
+	size_t i;
+	char **str;
+
+	str = (char *)s;
+
 }

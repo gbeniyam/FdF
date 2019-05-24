@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 17:14:12 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/15 20:50:59 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/17 15:26:30 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/18 21:30:10 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	free(*as);
-	*as = NULL;	
+	size_t i;
+	size_t j;
+	char *result;
+	char *c_s1;
+	char *c_s2;
+
+	i = 0;
+	j = 0;
+	c_s1 = (char *)s1;
+	c_s2 = (char *)s2;
+	if (!(result = ft_strnew(strlen(s1) + strlen(s2))))
+		return (NULL);
+	ft_strlcat(result, c_s1, ft_strlen(s1));
+	ft_strlcat(result, c_s2, ft_strlen(s2));
+	return (result);
 }

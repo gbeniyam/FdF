@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 17:14:12 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/15 20:50:59 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/16 12:21:48 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/18 15:40:56 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	free(*as);
-	*as = NULL;	
+    size_t i;
+
+    i = 0;
+    if (!s1 || !s2)
+        return (0);
+    while ((s1[i] && s2[i]) && i < n)
+    {
+        if (s1[i] == s2[i])
+        {
+            i++;
+        }
+        else
+            return (0);
+    }
+    return (1);
 }
