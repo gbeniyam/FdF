@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/05 22:34:28 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/09 12:27:18 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/29 15:41:14 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	i = 0;
 	j = 0;
-	while (s2[i] != '\0')
+	while (s1[i] != '\0')
 		i++;
 	while (s2[j] != '\0' && j < n)
 	{

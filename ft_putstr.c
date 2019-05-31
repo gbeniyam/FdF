@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/11 17:37:20 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 18:57:47 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/27 20:46:20 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/28 10:44:47 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_putstr(char const *s)
 {
-	if (ap == NULL || *ap == NULL)
+	if (!s)
 		return ;
-	free(*ap);
-	*ap = NULL;
+	while (*s)
+		write(1, s++, 1);
 }

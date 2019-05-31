@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 21:10:12 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/15 20:51:23 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 19:05:24 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strclr(char *s)
 {
+	if (!s)
+		return ;
 	ft_bzero(s, ft_strlen(s));
 }

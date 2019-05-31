@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 20:39:50 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/04 21:29:02 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/26 21:45:47 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t		ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
+	if (!s[i])
+		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);

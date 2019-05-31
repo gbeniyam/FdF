@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/11 17:37:20 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 18:57:47 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/27 18:21:18 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/27 18:26:22 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_memdel(void **ap)
+int		ft_intlen(int n)
 {
-	if (ap == NULL || *ap == NULL)
-		return ;
-	free(*ap);
-	*ap = NULL;
+	int len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }

@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/11 17:37:20 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 18:57:47 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/05/27 15:07:49 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/05/27 19:29:39 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_itoa(int n)
 {
-	if (ap == NULL || *ap == NULL)
-		return ;
-	free(*ap);
-	*ap = NULL;
+	char *num;
+	int sign;
+	int len;
+
+	len = ft_intlen(n);
+	sign = (n < 0) ? 1 : 0;
+	if (!(num = ft_strnew((size_t)(sign + len))))
+		return (NULL);
+	if (sign)
+		num[0] = '-';
+	else if (n > 0)
+		len--;
+	else
+		num[0] = '0';
+	while (n)
+	{
+		if (n > 0)
+			num[len] = (n % 10) + '0';
+		else
+			num[len] = -(n % 10) + '0';
+		n = n / 10;
+		len--;
+	}
+	return (num);
 }

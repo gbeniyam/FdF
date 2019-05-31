@@ -6,7 +6,7 @@
 #    By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/29 18:44:48 by gbeniyam          #+#    #+#              #
-#    Updated: 2019/05/23 18:15:59 by gbeniyam         ###   ########.fr        #
+#    Updated: 2019/05/29 08:34:12 by gbeniyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,7 @@ NAME = libft.a
 
 CLAGS = -Wall -Wextra -Werror
 
-SRC =	ft_isupper.c\
-		ft_islower.c\
-		ft_iswhtsp.c\
-		ft_memset.c\
+SRC =	ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
 		ft_memccpy.c\
@@ -59,9 +56,8 @@ SRC =	ft_isupper.c\
 		ft_strsub.c\
 		ft_strjoin.c\
 		ft_strtrim.c\
-		ft_wordcount.c\
 		ft_strsplit.c\
-#		ft_itoa.c\
+		ft_itoa.c\
 		ft_putchar.c\
 		ft_putstr.c\
 		ft_putendl.c\
@@ -70,7 +66,13 @@ SRC =	ft_isupper.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
-		ft_lstnew.c\
+		ft_isupper.c\
+		ft_islower.c\
+		ft_iswhtsp.c\
+		ft_wordcount.c\
+		ft_intlen.c\
+		ft_strwlen.c
+#		ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstdel.c\
 		ft_lstadd.c\

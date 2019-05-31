@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 15:14:29 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/20 11:59:46 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/28 14:15:28 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ char	*ft_strtrim(char const *s)
 	result = ft_strnew(len);
 	if (!result)
 		return (NULL);
-	result = strncpy(result, start, len);
+	result = ft_strncpy(result, start, len);
 	return (result);
 }
