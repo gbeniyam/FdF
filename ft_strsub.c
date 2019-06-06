@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 13:49:44 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 19:20:24 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:18:46 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	unsigned int end;
-	char *s_ptr;
-	size_t i;
+	unsigned int	end;
+	char			*s_ptr;
+	size_t			i;
 
 	i = -1;
 	end = start;

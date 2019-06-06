@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:07:49 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/27 19:29:39 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:23:49 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_itoa(int n)
 {
-	char *num;
-	int sign;
-	int len;
+	char	*num;
+	int		sign;
+	int		len;
 
 	len = ft_intlen(n);
 	sign = (n < 0) ? 1 : 0;

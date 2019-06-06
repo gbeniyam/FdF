@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 15:14:29 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/28 14:15:28 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:18:16 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char *result;
-	char *start;
-	char *end;
-	size_t len;
+	char	*result;
+	char	*start;
+	char	*end;
+	size_t	len;
 
 	start = (char *)s;
 	len = 0;

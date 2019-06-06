@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 15:26:30 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 19:36:07 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:29:16 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
-	size_t j;
-	char *result;
-	size_t s1_len;
-	size_t s2_len;
+	size_t		i;
+	size_t		j;
+	char		*result;
+	size_t		s1_len;
+	size_t		s2_len;
 
 	i = -1;
 	j = -1;

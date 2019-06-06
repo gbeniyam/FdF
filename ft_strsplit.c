@@ -5,44 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:02:36 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/26 22:20:24 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/06/02 09:46:28 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/06/06 09:57:26 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_passc(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] == c)
-		i++;
-	return (i);
-}
-
 char	**ft_strsplit(char const *s, char c)
 {
-	char **str;
-	char **words;
-	size_t wordcount;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	wordcount;
+	char	**words;
 
-	wordcount = 0;
-	words = (char **)s;
-	str = words;
-	wordcount = ft_wordcount(s, c);
-	if(!(words = (char **)malloc(wordcount * sizeof(char **))))
+	if (!s)
 		return (NULL);
-	str = words;
-	str[wordcount + 1] = NULL;
-	while (wordcount > 0)
+	wordcount = ft_wordcount(s, c);
+	if (!(words = (char **)malloc(sizeof(*words) * (wordcount + 1))))
+		return (NULL);
+	i = -1;
+	j = 0;
+	while (++i < ft_wordcount(s, c))
 	{
-		s = s + ft_passc(s, c);
-		*words = ft_strsub(s, 0, ft_strwlen(s, c));
-		s = ft_strchr(s, c);
-		words++;
-		wordcount--;
+		k = 0;
+		if (!(words[i] = ft_strnew(ft_strwlen(s, c) + 1)))
+			words[i] = NULL;
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+			words[i][k++] = s[j++];
+		words[i][k] = '\0';
 	}
-	return (str);
+	words[i] = NULL;
+	return (words);
 }

@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 18:22:53 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/28 14:54:57 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:34:08 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	if (n == 0 || dst == src)
 		return (dst);
 	while (--n)
-		*uc_dst++ = *uc_src++;;
+		*uc_dst++ = *uc_src++;
 	*uc_dst = *uc_src;
 	return (dst);
 }

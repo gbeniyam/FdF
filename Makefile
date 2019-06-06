@@ -6,7 +6,7 @@
 #    By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/29 18:44:48 by gbeniyam          #+#    #+#              #
-#    Updated: 2019/05/29 08:34:12 by gbeniyam         ###   ########.fr        #
+#    Updated: 2019/06/06 10:03:37 by gbeniyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ SRC =	ft_memset.c\
 		ft_wordcount.c\
 		ft_intlen.c\
 		ft_strwlen.c
-#		ft_lstnew.c\
+		ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstdel.c\
 		ft_lstadd.c\

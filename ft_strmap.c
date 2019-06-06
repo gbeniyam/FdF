@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 19:00:00 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/15 21:09:56 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:21:54 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t i;
-	char *ret;
+	size_t	i;
+	char	*ret;
 
 	i = 0;
 	if (s == NULL || f == NULL)

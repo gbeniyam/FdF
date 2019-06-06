@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 13:12:40 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/06/06 09:58:02 by gbeniyam         ###   ########.fr       */
+/*   Created: 2019/06/04 13:42:08 by gbeniyam          #+#    #+#             */
+/*   Updated: 2019/06/05 16:19:19 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else
+	t_list *next_node;
+
+	while (*alst != NULL)
 	{
-		if (n < 0)
-		{
-			ft_putchar_fd('-', fd);
-			n *= -1;
-		}
-		if (n >= 10)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10) + '0', fd);
+		next_node = (*alst)->next;
+		ft_lstdelone(alst, del);
+		*alst = next_node;
 	}
 }

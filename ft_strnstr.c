@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 20:06:37 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 17:47:37 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:22:20 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	ndllen = ft_strlen(needle);
 	c_haystack = (char *)haystack;
-
 	if (!(*needle))
 		return (c_haystack);
 	while (c_haystack[i])

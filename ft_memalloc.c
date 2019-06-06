@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 17:27:08 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/05/30 18:49:31 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/30 20:18:59 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char *areaptr;
-	size_t i;
+	char	*areaptr;
+	size_t	i;
 
 	i = 0;
 	if (!(areaptr = (char *)malloc(size * sizeof(char))))
