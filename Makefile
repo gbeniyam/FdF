@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/29 18:44:48 by gbeniyam          #+#    #+#              #
-#    Updated: 2019/06/06 10:03:37 by gbeniyam         ###   ########.fr        #
+#    Created: 2019/06/06 10:34:49 by gbeniyam          #+#    #+#              #
+#    Updated: 2019/06/06 18:12:14 by gbeniyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRC =	ft_memset.c\
 		ft_bzero.c\
@@ -71,20 +71,19 @@ SRC =	ft_memset.c\
 		ft_iswhtsp.c\
 		ft_wordcount.c\
 		ft_intlen.c\
-		ft_strwlen.c
+		ft_strwlen.c\
 		ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstdel.c\
 		ft_lstadd.c\
 		ft_lstiter.c\
-		ft_lstmap.c\
+		ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME):
-	gcc -c $(SRC) $(CLAGS)
+	gcc -c $(SRC) $(CFLAGS)
 	ar -rv $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 all: $(NAME)
 

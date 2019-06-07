@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 08:54:14 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/06/06 09:57:47 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:51:51 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		lst = lst->next;
 		list->next = f(lst);
-		list = newlist->next;
+		list = list->next;
 	}
 	return (head);
 }
