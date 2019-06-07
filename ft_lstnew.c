@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 17:59:50 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/06/06 10:42:39 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:30:26 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		new_node->content = ft_memalloc(content_size);
-		if (new_node->content == NULL)
+		if (new_node->content = NULL)
 		{
 			free(new_node);
 			return (NULL);

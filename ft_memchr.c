@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 14:02:01 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/06/06 10:50:17 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/05/29 10:43:00 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*uc_s;
 	size_t			i;
 
-	i = -1;
+	i = 0;
 	uc_s = (unsigned char *)s;
 	while (++i < n)
 	{
