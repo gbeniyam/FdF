@@ -1,0 +1,13 @@
+get next line? Read in files, get x/y/z coordinates from each point.
+	x = nth number in row without spaces.
+	y = row/line
+	z = value at row,line.
+
+Hold values on heap, allocate memory based on size of text file.
+strlen of each line, multiply by amount of lines (get_next_line to count i
+lines).
+
+parse paramters, double pointer, fd. main.c opens file, grabs fd and
+passes in fd param. 
+
+

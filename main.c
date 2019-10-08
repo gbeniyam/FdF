@@ -6,83 +6,66 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:50:45 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/08/29 21:28:56 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/07 19:55:07 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define iabs(x) ((x) < 0) ? -(x) : (x)
-#include <unistd.h>
-#include "minilibx/mlx.h"
-#include <math.h>
+#include "fdf.h"
 
-typedef struct s_mlx {
-	void	*mlx;
-	void	*win;
-} t_mlx;
-
-typedef struct s_point {
-	int x;
-	int y;
-} t_point;
-
-//void	drawline(t_point p1, t_point p2, void *mlx, void *win)
-
-
-// ------- Use Nilson's algo, remove this stuff below
-void	drawline(t_point p1, t_point p2)
+void	drawline(void *mlx, void *win, t_point p0, t_point p1)
 {
 	int dx;
 	int dy;
-	int m;
-	int i;
-	int j1;
-	int j2;
-	int e; //epsilon aka error; distance from line to nearest pixel edge
+	int sx;
+	int sy;
+	int err;
+	int e2;
 
-	dx = p2.x - p1.x;
-	dy = p2.y - p1.y;
-	m = dy/dx;
-	i = iabs(p1.x);
-	j1 = iabs(p1.y);
-	j2 = iabs(p2.y);
-	e = 0;
-	if (dx > 0)
+	dx = iabs(p1.x - p0.x);
+	dy = iabs(p1.y - p0.y);
+	sx = p0.x < p1.x ? 1 : -1;
+	sy = p0.y < p1.y ? 1 : -1;
+	err = (dx > dy ? dx : -dy) / 2;
+
+	while (1)
 	{
-		i++;
-		e = -(1 - (p1.x - i) - (p1.y - j1) * (dx / dy));
-	}
-	else
-	{
-		i--;
-		e = -((p1.x - i) - (p1.y - j1) * (dx / dy));
-	}
-	for (int jcnt = j2 - j1; j1 < j2; jcnt++)
-	{
-		while (e >= 0)
+		mlx_pixel_put(mlx, win, p0.x, p0.y, 0xFFFFFF);
+		if (p0.x == p1.x && p0.y == p1.y)
+			break ;
+		e2 = err;
+		if (e2 >- dx)
 		{
-			i++;
-			e--;
+			err -= dy;
+			p0.x += sx;
 		}
-//		mlx_pixel_put(mlx, win, i, jcnt, 0xFFFFFF);
-		e+= (int)m;
+		if (e2 < dy)
+		{
+			err += dx;
+			p0.y += sy;
+		}
 	}
 }
-	void *mlx;
-	void *win;
 
-int		main()
+int		main(int argc, char **argv)
 {
-	t_mlx MLX;
+	t_canvas mlib;
+	t_point p0;
 	t_point p1;
-	t_point p2;
+	char *map_array;
 
-	p1.x = 50;
-	p1.y = 50;
-	p2.x = 350;
-	p2.y = 350;
-//	mlx = mlx_init();
-//	win = mlx_new_window(mlx, 500, 500, "MLX 42");
-//	drawline(p1, p2, mlx, win);	
-	drawline(p1, p2);
-	mlx_loop(MLX.mlx);
+	p0.x = 50;
+	p0.y = 50;
+	p1.x = 350;
+	p1.y = 350;
+	mlib.mlx = mlx_init();
+	mlib.win = mlx_new_window(mlib.mlx, WIN_WIDTH, WIN_HEIGHT, "MLX 42");
+
+	if (argc != 2)
+	{
+		ft_putstr("Usage: ./fdf file.txt");
+	}
+	parse(argv[1], map_array);
+	drawline(mlib.mlx, mlib.win, p0, p1);	
+	mlx_loop(mlib.mlx);
 }

@@ -6,21 +6,34 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:48:07 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/08/16 17:48:23 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/07 20:05:58 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
-# define WINDOW_WIDTH			400//1280
-# define WINDOW_HEIGHT			400//720
+# define WIN_WIDTH			500//1280
+# define WIN_HEIGHT			500//720
+# include <unistd.h>
+# include <math.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include "minilibx/mlx.h"
+# include "libft/libft.h"
 
-typedef struct		s_mlx
+typedef struct		s_canvas
 {
 	void	*mlx;
-	void	*window;
-}					t_mlx;
+	void	*win;
+}					t_canvas;
 
-void	draw(t_mlx *mlx);
+typedef struct		s_point
+{
+	int x;
+	int y;
+}					t_point;
 
+void	drawline(void *mlx, void *win, t_point p0, t_point p1);
+
+int		parse(const char *filename, char *array);
 #endif
