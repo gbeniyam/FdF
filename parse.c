@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 09:45:07 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/10/07 21:02:14 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:22:19 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		parse(const char *filename, char *array)
 	linecount--;
 	printf("THIS MANY LINES OMG: %d\n", linecount);
 	&ptr = ft_strsplit(array, ' ');
+	
 	// strsplit, another function to count indices for columns (x points)
 	return (0);
 }
