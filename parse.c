@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 09:45:07 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/10/10 14:45:34 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:17:02 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,25 @@
 #include "fdf.h"
 #include <stdio.h>
 
+int		cntIndex(char **parsedGNL)
+{
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+	while (**(parsedGNL + i) != '\0')
+	{
+		write(1, *(parsedGNL + i), 1);
+		write(1, " ", 1);
+		i++;
+		count++;
+	}
+	write(1, "\n", 1);
+	write(1, &count, 1);
+	return (count);
+}
+
 int		parse(const char *filename, char *array)
 {
 	int x;
@@ -63,7 +82,7 @@ int		parse(const char *filename, char *array)
 	linecount--;
 	printf("THIS MANY LINES OMG: %d\n", linecount);
 	parsedGNL = ft_strsplit(array, ' ');
-
+	cntIndex(parsedGNL);
 	// strsplit, another function to count indices for columns (x points)
 	return (0);
 }
