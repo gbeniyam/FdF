@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:50:45 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/10/09 14:26:48 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:50:05 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,4 @@ int		main(int argc, char **argv)
 	parse(argv[1], map_array);
 	drawline(mlib.mlx, mlib.win, p0, p1);	
 	mlx_loop(mlib.mlx);
-(x)}
+}
