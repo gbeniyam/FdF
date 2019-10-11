@@ -48,10 +48,12 @@ int		cntIndex(char **parsedGNL)
 
 	i = 0;
 	count = 0;
-	while (**(parsedGNL + i) != '\0')
+	while (atoi(parsedGNL[i]) != '\0')
 	{
-		write(1, *(parsedGNL + i), 1);
-		write(1, " ", 1);
+		printf("i = %d, %c\n", i, parsedGNL[i][0]);
+//		write(1, &parsedGNL[i][0], 1);
+//		write(1, " ", 1);
+		printf("Num = %d, %d", i, atoi(parsedGNL[i]));
 		i++;
 		count++;
 	}
@@ -82,6 +84,7 @@ int		parse(const char *filename, char *array)
 	linecount--;
 	printf("THIS MANY LINES OMG: %d\n", linecount);
 	parsedGNL = ft_strsplit(array, ' ');
+	
 	cntIndex(parsedGNL);
 	// strsplit, another function to count indices for columns (x points)
 	return (0);
