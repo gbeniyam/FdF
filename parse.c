@@ -6,7 +6,7 @@
 /*   By: gbeniyam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 09:45:07 by gbeniyam          #+#    #+#             */
-/*   Updated: 2019/10/10 15:17:02 by gbeniyam         ###   ########.fr       */
+/*   Updated: 2019/10/11 17:19:46 by gbeniyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,19 @@
 int		cntIndex(char **parsedGNL)
 {
 	int count;
-	int i;
 
-	i = 0;
 	count = 0;
-	while (atoi(parsedGNL[i]) != '\0')
+	while (parsedGNL[count] != '\0')
 	{
-		printf("i = %d, %c\n", i, parsedGNL[i][0]);
-//		write(1, &parsedGNL[i][0], 1);
-//		write(1, " ", 1);
-		printf("Num = %d, %d", i, atoi(parsedGNL[i]));
-		i++;
+		printf("Count = %d, %c\n", count, parsedGNL[count][0]);
 		count++;
 	}
-	write(1, "\n", 1);
-	write(1, &count, 1);
+	printf("Count, columns (x) total = %i\n", count);
 	return (count);
 }
 
 int		parse(const char *filename, char *array)
 {
-	int x;
-	int y;
-	int z;
 	int fd;
 	int gnl;
 	int linecount;
@@ -82,7 +72,7 @@ int		parse(const char *filename, char *array)
 		linecount++;
 	}
 	linecount--;
-	printf("THIS MANY LINES OMG: %d\n", linecount);
+	printf("THIS MANY LINES (rows, y) OMG: %d\n", linecount);
 	parsedGNL = ft_strsplit(array, ' ');
 	
 	cntIndex(parsedGNL);

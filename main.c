@@ -54,6 +54,7 @@ int		main(int argc, char **argv)
 	t_point p1;
 	char *map_array;
 
+	map_array = NULL;
 	p0.x = 50;
 	p0.y = 50;
 	p1.x = 350;
