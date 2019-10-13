@@ -48,10 +48,10 @@ int		cntIndex(char **parsedGNL)
 	count = 0;
 	while (parsedGNL[count] != '\0')
 	{
-		printf("Count = %d, %c\n", count, parsedGNL[count][0]);
+		ft_putstr(parsedGNL[count]);
+		(parsedGNL[count][0] == '0') ? ft_putstr(" |") : ft_putstr("|");
 		count++;
 	}
-	printf("Count, columns (x) total = %i\n", count);
 	return (count);
 }
 
@@ -69,13 +69,13 @@ int		parse(const char *filename, char *array)
 	while (gnl != 0)
 	{
 		gnl = get_next_line(fd, &array);
+		parsedGNL = ft_strsplit(array, ' ');
+		cntIndex(parsedGNL);
+		printf("\n");
 		linecount++;
 	}
 	linecount--;
+	printf("\nColumns(x) = %i\n", cntIndex(parsedGNL));
 	printf("THIS MANY LINES (rows, y) OMG: %d\n", linecount);
-	parsedGNL = ft_strsplit(array, ' ');
-	
-	cntIndex(parsedGNL);
-	// strsplit, another function to count indices for columns (x points)
 	return (0);
 }
