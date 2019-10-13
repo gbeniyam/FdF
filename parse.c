@@ -48,14 +48,14 @@ int		cntIndex(char **parsedGNL)
 	count = 0;
 	while (parsedGNL[count] != '\0')
 	{
-		ft_putstr(parsedGNL[count]);
-		(parsedGNL[count][0] == '0') ? ft_putstr(" |") : ft_putstr("|");
+		// ft_putstr(parsedGNL[count]);
+		// (parsedGNL[count][0] == '0') ? ft_putstr(" |") : ft_putstr("|");
 		count++;
 	}
 	return (count);
 }
 
-int		parse(const char *filename, char *array)
+int		parse(const char *filename, char *array) // replace *array with object to pass object. object->array for pointer, object->x/y/z for parsing and mallocing. 
 {
 	int fd;
 	int gnl;
@@ -71,11 +71,11 @@ int		parse(const char *filename, char *array)
 		gnl = get_next_line(fd, &array);
 		parsedGNL = ft_strsplit(array, ' ');
 		cntIndex(parsedGNL);
-		printf("\n");
+		// printf("\n");
 		linecount++;
 	}
 	linecount--;
-	printf("\nColumns(x) = %i\n", cntIndex(parsedGNL));
-	printf("THIS MANY LINES (rows, y) OMG: %d\n", linecount);
+	// printf("Columns(x): %d\n", cntIndex(parsedGNL));
+	// printf("Rows(y): %d\n", linecount);
 	return (0);
 }
