@@ -55,7 +55,7 @@ int		cntIndex(char **parsedGNL)
 	return (count);
 }
 
-int		parse(const char *filename, char *array) // replace *array with object to pass object. object->array for pointer, object->x/y/z for parsing and mallocing. 
+int		parse(const char *filename, t_parse *parse_obj) // replace *array with object to pass object. object->array for pointer, object->x/y/z for parsing and mallocing. 
 // Also, edit paramater date type and in fdf.h
 {
 	int fd;
@@ -69,8 +69,8 @@ int		parse(const char *filename, char *array) // replace *array with object to p
 
 	while (gnl != 0)
 	{
-		gnl = get_next_line(fd, &array);
-		parsedGNL = ft_strsplit(array, ' ');
+		gnl = get_next_line(fd, parse_obj->map_array);
+		parsedGNL = ft_strsplit(parse_obj->map_array, ' ');
 		cntIndex(parsedGNL);
 		// printf("\n");
 		linecount++;

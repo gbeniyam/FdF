@@ -52,9 +52,10 @@ int		main(int argc, char **argv)
 	t_canvas mlib;
 	t_point p0;
 	t_point p1;
-	char *map_array;
+	t_parse parse_obj;
+	// char *map_array;
 
-	map_array = NULL;
+	parse_obj.map_array = NULL; // why not ->map_array? 
 	p0.x = 50;
 	p0.y = 50;
 	p1.x = 350;
@@ -66,7 +67,7 @@ int		main(int argc, char **argv)
 	{
 		ft_putstr("Usage: ./fdf file.txt");
 	}
-	parse(argv[1], map_array);
+	parse(argv[1], &parse_obj);
 	drawline(mlib.mlx, mlib.win, p0, p1);	
 	mlx_loop(mlib.mlx);
 }

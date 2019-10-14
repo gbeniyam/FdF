@@ -29,11 +29,20 @@ typedef struct		s_canvas
 
 typedef struct		s_point
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 }					t_point;
+
+typedef struct		s_parse
+{
+	int		width;
+	int		height;
+
+	char	*map_array;
+}					t_parse;
+
 
 void	drawline(void *mlx, void *win, t_point p0, t_point p1);
 
-int		parse(const char *filename, char *array);
+int		parse(const char *filename, t_parse parse_object);
 #endif
