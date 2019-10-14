@@ -56,7 +56,6 @@ int		cntIndex(char **parsedGNL)
 }
 
 int		parse(const char *filename, char *array) // replace *array with object to pass object. object->array for pointer, object->x/y/z for parsing and mallocing. 
-// Also, edit paramater date type and in fdf.h
 {
 	int fd;
 	int gnl;
