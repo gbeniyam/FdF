@@ -53,7 +53,6 @@ int		main(int argc, char **argv)
 	t_point p0;
 	t_point p1;
 	t_parse parse_obj;
-	// char *map_array;
 
 	parse_obj.map_array = NULL; // why not ->map_array? 
 	p0.x = 50;

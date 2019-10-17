@@ -44,5 +44,5 @@ typedef struct		s_parse
 
 void	drawline(void *mlx, void *win, t_point p0, t_point p1);
 
-int		parse(const char *filename, t_parse parse_object);
+int		parse(const char *filename, t_parse *parse_object);
 #endif
