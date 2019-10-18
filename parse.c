@@ -71,11 +71,12 @@ int		parse(const char *filename, t_parse *parse_obj) // Convert to int and assig
 		gnl = get_next_line(fd, &parse_obj->map_array);
 		parsedGNL = ft_strsplit(parse_obj->map_array, ' ');
 		cntIndex(parsedGNL);
-		// printf("\n");
 		linecount++;
 	}
 	linecount--;
-	// printf("Columns(x): %d\n", cntIndex(parsedGNL));
-	// printf("Rows(y): %d\n", linecount);
+	parse_obj->height = linecount;
+	parse_obj->width = cntIndex(parsedGNL);
+	printf("Columns(x): %d\n", parse_obj->width);
+	printf("Rows(y): %d\n", parse_obj->height);
 	return (0);
 }

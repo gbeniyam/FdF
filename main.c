@@ -54,7 +54,7 @@ int		main(int argc, char **argv)
 	t_point p1;
 	t_parse parse_obj;
 
-	parse_obj.map_array = NULL; // why not ->map_array? 
+	parse_obj.map_array = NULL;
 	p0.x = 50;
 	p0.y = 50;
 	p1.x = 350;
