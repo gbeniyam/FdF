@@ -67,6 +67,7 @@ int		main(int argc, char **argv)
 		ft_putstr("Usage: ./fdf file.txt");
 	}
 	parse(argv[1], &parse_obj);
-	drawline(mlib.mlx, mlib.win, p0, p1);	
+	drawline(mlib.mlx, mlib.win, p0, p1);
+	mlx_key_hook(mlib.win, key_pressed, &(mlib));
 	mlx_loop(mlib.mlx);
 }
